@@ -1,0 +1,3097 @@
+/* =========================================================
+   PORTFÓLIO - CARLOS VINICIUS
+   PALETA: PRETO + VERDE + BRANCO
+========================================================= */
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* =========================================================
+   VARIÁVEIS
+========================================================= */
+
+:root {
+
+    font-family:
+        "Segoe UI",
+        Tahoma,
+        Geneva,
+        Verdana,
+        sans-serif;
+
+    --bg-main: #050505;
+    --bg-dark: #000000;
+    --bg-card: #101010;
+    --bg-card-light: #151515;
+
+    --green-primary: #00e676;
+    --green-secondary: #00c853;
+    --green-dark: #007a3d;
+
+    --white: #ffffff;
+
+    --text-primary: #ffffff;
+    --text-secondary: #b7b7b7;
+    --text-muted: #7d7d7d;
+
+    --border-green: rgba(0, 230, 118, 0.25);
+
+    --shadow-green:
+        0 0 30px rgba(0, 230, 118, 0.12);
+
+    --transition:
+        all 0.3s ease;
+}
+
+
+/* =========================================================
+   BODY
+========================================================= */
+
+body {
+
+    background:
+        var(--bg-main);
+
+    color:
+        var(--text-primary);
+
+    line-height:
+        1.7;
+
+    overflow-x:
+        hidden;
+
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #00c853;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #00e676;
+}
+
+
+/* =========================================================
+   SELEÇÃO DE TEXTO
+========================================================= */
+
+::selection {
+    background: var(--green-primary);
+    color: #000;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header {
+
+    min-height: 100vh;
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    padding:
+
+        100px
+        30px
+        60px;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 25%,
+            rgba(0, 200, 83, 0.25),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(0, 230, 118, 0.08),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #000000,
+            #050505,
+            #0c0c0c
+        );
+
+}
+
+
+/* =========================================================
+   CANVAS HEADER
+========================================================= */
+
+#header-canvas {
+
+    position:
+        absolute;
+
+    top:
+        0;
+
+    left:
+        0;
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    pointer-events:
+        none;
+
+    opacity:
+        0.75;
+
+    z-index:
+        1;
+
+}
+
+
+/* =========================================================
+   MENU FIXO
+========================================================= */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 8%;
+
+    background: rgba(5, 5, 5, 0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid rgba(0, 230, 118, 0.12);
+
+    z-index: 1000;
+}
+
+.navbar__logo {
+    color: #00e676;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.navbar__menu {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+
+    list-style: none;
+}
+
+.navbar__menu a {
+    color: #b7b7b7;
+    text-decoration: none;
+
+    font-size: 0.9rem;
+    font-weight: 500;
+
+    transition: 0.3s ease;
+}
+
+.navbar__menu a:hover {
+    color: #00e676;
+}
+
+/* evita que o menu cubra o título ao clicar */
+section {
+    scroll-margin-top: 90px;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.navbar__logo {
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size:
+        1.4rem;
+
+    font-weight:
+        800;
+
+    color:
+        var(--white);
+
+}
+
+.navbar__logo span {
+    color:
+        var(--green-primary);
+}
+
+
+/* =========================================================
+   MENU
+========================================================= */
+
+/* =========================================================
+   BOTÕES DO MENU
+========================================================= */
+
+.navbar__menu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar__menu a {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    padding: 9px 14px;
+
+    color: #b7b7b7;
+    background: transparent;
+
+    border: 1px solid transparent;
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-size: 0.85rem;
+    font-weight: 500;
+
+    transition:
+        color 0.25s ease,
+        background 0.25s ease,
+        border 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+/* ÍCONES */
+
+.navbar__menu a i {
+    font-size: 0.85rem;
+    color: #00e676;
+
+    transition: 0.25s ease;
+}
+
+
+/* HOVER */
+
+.navbar__menu a:hover {
+    color: #ffffff;
+
+    background: rgba(0, 230, 118, 0.07);
+
+    border-color: rgba(0, 230, 118, 0.25);
+
+    transform: translateY(-1px);
+}
+
+
+/* SEÇÃO ATUAL */
+
+.navbar__menu a.active {
+    color: #00e676;
+
+    background: rgba(0, 230, 118, 0.08);
+
+    border-color: rgba(0, 230, 118, 0.25);
+}
+
+
+/* BOTÃO CONTATO */
+
+.navbar__menu .menu-contact {
+    color: #050505;
+    background: #00e676;
+
+    border-color: #00e676;
+
+    padding-left: 16px;
+    padding-right: 16px;
+
+    font-weight: 600;
+}
+
+.navbar__menu .menu-contact i {
+    color: #050505;
+}
+
+.navbar__menu .menu-contact:hover {
+    color: #050505;
+
+    background: #ffffff;
+    border-color: #ffffff;
+
+    box-shadow: 0 0 20px rgba(0, 230, 118, 0.18);
+}
+
+.navbar__menu .menu-contact:hover i {
+    color: #050505;
+}
+
+
+/* =========================================================
+   CONTEÚDO HEADER
+========================================================= */
+
+.header__content {
+
+    position:
+        relative;
+
+    z-index:
+        5;
+
+    text-align:
+        center;
+
+    max-width:
+        1000px;
+
+}
+
+
+/* =========================================================
+   SUBTÍTULO
+========================================================= */
+
+.header__subtitle {
+
+    margin-bottom:
+        20px;
+
+    font-size:
+        0.95rem;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        5px;
+
+    color:
+        var(--green-primary);
+
+    text-shadow:
+        0 0 18px rgba(0, 230, 118, 0.5);
+
+}
+
+
+/* =========================================================
+   TÍTULO HEADER
+========================================================= */
+
+.header__title {
+
+    font-size:
+        clamp(2.5rem, 6vw, 5rem);
+
+    line-height:
+        1.1;
+
+    font-weight:
+        800;
+
+    color:
+        var(--white);
+
+    margin-bottom:
+        16px;
+
+}
+
+.header__title span {
+
+    display:
+        block;
+
+    color:
+        var(--green-primary);
+
+    text-shadow:
+        0 0 30px rgba(0, 230, 118, 0.25);
+
+}
+
+
+/* =========================================================
+   CARGO
+========================================================= */
+
+.header__role {
+
+    font-size:
+        clamp(1.2rem, 2.5vw, 2rem);
+
+    color:
+        #eeeeee;
+
+    font-weight:
+        500;
+
+    margin-bottom:
+        18px;
+
+}
+
+
+/* =========================================================
+   DESCRIÇÃO HEADER
+========================================================= */
+
+.header__description {
+
+    max-width:
+        700px;
+
+    margin:
+        0 auto;
+
+    color:
+        var(--text-secondary);
+
+    font-size:
+        1.05rem;
+
+}
+
+
+/* =========================================================
+   BOTÕES HEADER
+========================================================= */
+
+.header__buttons {
+
+    margin-top:
+        35px;
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    gap:
+        16px;
+
+    flex-wrap:
+        wrap;
+
+}
+
+.btn {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        9px;
+
+    padding:
+        13px 26px;
+
+    border-radius:
+        7px;
+
+    font-weight:
+        700;
+
+    font-size:
+        0.92rem;
+
+    transition:
+        var(--transition);
+
+}
+
+.btn-primary {
+
+    background:
+        var(--green-primary);
+
+    color:
+        #000;
+
+    border:
+        1px solid var(--green-primary);
+
+}
+
+.btn-primary:hover {
+
+    background:
+        #00ff83;
+
+    box-shadow:
+        0 0 25px rgba(0, 230, 118, 0.35);
+
+    transform:
+        translateY(-3px);
+
+}
+
+.btn-outline {
+
+    border:
+        1px solid var(--green-primary);
+
+    color:
+        var(--green-primary);
+
+    background:
+        transparent;
+
+}
+
+.btn-outline:hover {
+
+    background:
+        rgba(0, 230, 118, 0.08);
+
+    box-shadow:
+        0 0 20px rgba(0, 230, 118, 0.15);
+
+    transform:
+        translateY(-3px);
+
+}
+
+
+/* =========================================================
+   SCROLL
+========================================================= */
+
+.scroll-indicator {
+
+    position:
+        absolute;
+
+    bottom:
+        30px;
+
+    left:
+        50%;
+
+    transform:
+        translateX(-50%);
+
+    z-index:
+        5;
+
+    color:
+        var(--green-primary);
+
+    animation:
+        scrollDown 1.6s infinite;
+
+}
+
+@keyframes scrollDown {
+
+    0%,
+    100% {
+        transform:
+            translate(-50%, 0);
+    }
+
+    50% {
+        transform:
+            translate(-50%, 10px);
+    }
+
+}
+
+
+/* =========================================================
+   SEÇÕES GERAIS
+========================================================= */
+
+section {
+
+    position:
+        relative;
+
+    padding:
+        100px 7%;
+
+}
+
+.section-header {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        12px;
+
+    margin-bottom:
+        55px;
+
+}
+
+.section-number {
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    color:
+        var(--green-primary);
+
+    font-weight:
+        700;
+
+}
+
+.section-title {
+
+    color:
+        var(--white);
+
+    font-size:
+        clamp(2rem, 4vw, 2.8rem);
+
+    font-weight:
+        800;
+
+}
+
+
+/* =========================================================
+   PERFIL
+========================================================= */
+
+.profile {
+
+    background:
+
+        radial-gradient(
+            circle at 10% 50%,
+            rgba(0, 230, 118, 0.07),
+            transparent 35%
+        ),
+
+        #080808;
+
+}
+
+
+/* =========================================================
+   CONTAINER PERFIL
+========================================================= */
+
+.profile__container {
+
+    max-width:
+        1050px;
+
+    margin:
+        0 auto;
+
+    padding:
+        55px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #121212,
+            #0d0d0d
+        );
+
+    border:
+        1px solid var(--border-green);
+
+    border-radius:
+        18px;
+
+    box-shadow:
+        var(--shadow-green);
+
+    display:
+        grid;
+
+    grid-template-columns:
+        240px 1fr;
+
+    gap:
+        50px;
+
+    align-items:
+        start;
+
+}
+
+
+/* =========================================================
+   AVATAR
+========================================================= */
+
+.profile__avatar-container {
+
+    position:
+        relative;
+
+    text-align:
+        center;
+
+}
+
+.profile__avatar {
+
+    width:
+        210px;
+
+    height:
+        210px;
+
+    object-fit:
+        cover;
+
+    border-radius:
+        50%;
+
+    border:
+        4px solid #111;
+
+    margin:
+        0 auto;
+
+    box-shadow:
+
+        0 0 0 4px var(--green-primary),
+
+        0 0 35px rgba(0, 230, 118, 0.28);
+
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.profile__status {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        8px;
+
+    margin-top:
+        22px;
+
+    color:
+        #bbbbbb;
+
+    font-size:
+        0.82rem;
+
+}
+
+.status-dot {
+
+    width:
+        9px;
+
+    height:
+        9px;
+
+    background:
+        var(--green-primary);
+
+    border-radius:
+        50%;
+
+    box-shadow:
+        0 0 10px var(--green-primary);
+
+}
+
+
+/* =========================================================
+   TEXTO PERFIL
+========================================================= */
+
+.profile__content {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        20px;
+
+}
+
+.profile__copy {
+
+    color:
+        #cccccc;
+
+    font-size:
+        1rem;
+
+    text-align:
+        justify;
+
+}
+
+.profile__copy strong {
+
+    color:
+        var(--green-primary);
+
+}
+
+
+/* =========================================================
+   FRASE PERFIL
+========================================================= */
+
+.profile__phrase {
+
+    margin-top:
+        12px;
+
+    padding:
+        22px;
+
+    border-left:
+        4px solid var(--green-primary);
+
+    background:
+        rgba(0, 230, 118, 0.05);
+
+    border-radius:
+        0 10px 10px 0;
+
+}
+
+.profile__phrase i {
+
+    color:
+        var(--green-primary);
+
+    margin-bottom:
+        10px;
+
+}
+
+.profile__phrase p {
+
+    color:
+        #e1e1e1;
+
+    font-style:
+        italic;
+
+}
+
+.profile__phrase strong {
+
+    color:
+        var(--green-primary);
+
+}
+
+
+/* =========================================================
+   TRAJETÓRIA
+========================================================= */
+
+.trajectory {
+
+    background:
+        #050505;
+
+}
+
+.timeline {
+
+    position:
+        relative;
+
+    max-width:
+        950px;
+
+    margin:
+        0 auto;
+
+}
+
+.timeline::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    top:
+        0;
+
+    left:
+        34px;
+
+    width:
+        2px;
+
+    height:
+        100%;
+
+    background:
+        linear-gradient(
+            var(--green-primary),
+            rgba(0, 230, 118, 0.1)
+        );
+
+}
+
+.timeline__item {
+
+    position:
+        relative;
+
+    display:
+        flex;
+
+    gap:
+        30px;
+
+    padding-bottom:
+        50px;
+
+}
+
+.timeline__icon {
+
+    min-width:
+        70px;
+
+    width:
+        70px;
+
+    height:
+        70px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    background:
+        #101010;
+
+    color:
+        var(--green-primary);
+
+    border:
+        2px solid var(--green-primary);
+
+    border-radius:
+        50%;
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    font-size:
+        1.35rem;
+
+    box-shadow:
+        0 0 20px rgba(0, 230, 118, 0.18);
+
+}
+
+.timeline__content {
+
+    flex:
+        1;
+
+    background:
+        var(--bg-card);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.06);
+
+    border-radius:
+        14px;
+
+    padding:
+        26px;
+
+    transition:
+        var(--transition);
+
+}
+
+.timeline__content:hover {
+
+    border-color:
+        var(--green-primary);
+
+    transform:
+        translateX(7px);
+
+    box-shadow:
+        var(--shadow-green);
+
+}
+
+.timeline__tag {
+
+    color:
+        var(--green-primary);
+
+    font-size:
+        0.72rem;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        2px;
+
+}
+
+.timeline__content h3 {
+
+    color:
+        #fff;
+
+    margin:
+        8px 0 10px;
+
+    font-size:
+        1.35rem;
+
+}
+
+.timeline__content p {
+
+    color:
+        var(--text-secondary);
+
+}
+
+
+/* =========================================================
+   ESPECIALIDADES
+========================================================= */
+
+.especialidades {
+
+    background:
+
+        linear-gradient(
+            rgba(0, 230, 118, 0.025) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(0, 230, 118, 0.025) 1px,
+            transparent 1px
+        ),
+
+        #090909;
+
+    background-size:
+        40px 40px;
+
+}
+
+.especialidades__grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap:
+        25px;
+
+    max-width:
+        1100px;
+
+    margin:
+        0 auto;
+
+}
+
+.especialidades__card {
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            #111111,
+            #0c0c0c
+        );
+
+    border:
+        1px solid rgba(255, 255, 255, 0.06);
+
+    border-radius:
+        14px;
+
+    padding:
+        38px;
+
+    transition:
+        var(--transition);
+
+}
+
+.especialidades__card::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    top:
+        0;
+
+    left:
+        0;
+
+    width:
+        4px;
+
+    height:
+        100%;
+
+    background:
+        var(--green-primary);
+
+}
+
+.especialidades__card:hover {
+
+    transform:
+        translateY(-8px);
+
+    border-color:
+        var(--border-green);
+
+    box-shadow:
+        0 15px 40px rgba(0, 230, 118, 0.1);
+
+}
+
+.card-icon {
+
+    font-size:
+        2.2rem;
+
+    color:
+        var(--green-primary);
+
+    margin-bottom:
+        18px;
+
+}
+
+.especialidades__card h3 {
+
+    font-size:
+        1.35rem;
+
+    color:
+        var(--white);
+
+    margin-bottom:
+        12px;
+
+}
+
+.especialidades__card p {
+
+    color:
+        var(--text-secondary);
+
+    margin-bottom:
+        22px;
+
+}
+
+
+/* =========================================================
+   TAGS
+========================================================= */
+
+.tech-tags {
+
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        9px;
+
+}
+
+.tech-tags span {
+
+    padding:
+        7px 12px;
+
+    border-radius:
+        5px;
+
+    color:
+        var(--green-primary);
+
+    background:
+        rgba(0, 230, 118, 0.07);
+
+    border:
+        1px solid rgba(0, 230, 118, 0.18);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size:
+        0.78rem;
+
+}
+
+
+/* =========================================================
+   SMARTBED
+========================================================= */
+
+.smartbed {
+
+    background:
+
+        radial-gradient(
+            circle at right top,
+            rgba(0, 230, 118, 0.09),
+            transparent 28%
+        ),
+
+        #050505;
+
+}
+
+
+/* =========================================================
+   SMARTBED HERO
+========================================================= */
+
+.smartbed__hero {
+
+    max-width:
+        1200px;
+
+    margin:
+        0 auto;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        60px;
+
+    align-items:
+        center;
+
+}
+
+
+/* =========================================================
+   SMARTBED INFO
+========================================================= */
+
+.project-badge {
+
+    display:
+        inline-block;
+
+    color:
+        var(--green-primary);
+
+    border:
+        1px solid var(--green-primary);
+
+    background:
+        rgba(0, 230, 118, 0.05);
+
+    border-radius:
+        30px;
+
+    padding:
+        7px 15px;
+
+    font-size:
+        0.73rem;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        2px;
+
+    margin-bottom:
+        20px;
+
+}
+
+.smartbed__info h2 {
+
+    font-size:
+        clamp(3rem, 6vw, 5rem);
+
+    line-height:
+        1;
+
+    color:
+        #fff;
+
+    margin-bottom:
+        16px;
+
+}
+
+.smartbed__info h2 span {
+
+    color:
+        var(--green-primary);
+
+}
+
+.smartbed__info h3 {
+
+    color:
+        #dedede;
+
+    font-size:
+        1.3rem;
+
+    margin-bottom:
+        25px;
+
+}
+
+.smartbed__info p {
+
+    color:
+        var(--text-secondary);
+
+    margin-bottom:
+        18px;
+
+}
+
+.smartbed__info strong {
+
+    color:
+        var(--green-primary);
+
+}
+
+
+/* =========================================================
+   SMARTBED TAGS
+========================================================= */
+
+.smartbed__tags {
+
+    margin-top:
+        28px;
+
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        10px;
+
+}
+
+.smartbed__tags span {
+
+    padding:
+        8px 13px;
+
+    color:
+        var(--green-primary);
+
+    border:
+        1px solid rgba(0, 230, 118, 0.2);
+
+    border-radius:
+        6px;
+
+    background:
+        rgba(0, 230, 118, 0.05);
+
+    font-size:
+        0.78rem;
+
+    font-weight:
+        600;
+
+}
+
+
+/* =========================================================
+   DASHBOARD PREVIEW
+========================================================= */
+
+.dashboard-preview {
+
+    overflow:
+        hidden;
+
+    background:
+        #090909;
+
+    border:
+        1px solid rgba(0, 230, 118, 0.25);
+
+    border-radius:
+        15px;
+
+    box-shadow:
+
+        0 0 40px rgba(0, 230, 118, 0.08),
+
+        0 25px 60px rgba(0, 0, 0, 0.5);
+
+}
+
+
+/* =========================================================
+   CABEÇALHO DASHBOARD
+========================================================= */
+
+.dashboard-preview__header {
+
+    height:
+        50px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+    padding:
+        0 18px;
+
+    color:
+        #888;
+
+    background:
+        #111;
+
+    border-bottom:
+        1px solid #1f1f1f;
+
+    font-size:
+        0.8rem;
+
+}
+
+.circle {
+
+    width:
+        10px;
+
+    height:
+        10px;
+
+    border-radius:
+        50%;
+
+}
+
+.circle.red {
+    background:
+        #ff5f57;
+}
+
+.circle.yellow {
+    background:
+        #febc2e;
+}
+
+.circle.green {
+    background:
+        #28c840;
+}
+
+
+/* =========================================================
+   CONTEÚDO DASHBOARD
+========================================================= */
+
+.dashboard-preview__content {
+
+    padding:
+        28px;
+
+    display:
+        grid;
+
+    gap:
+        15px;
+
+}
+
+.bed-card {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        40px 1fr auto;
+
+    align-items:
+        center;
+
+    gap:
+        10px;
+
+    padding:
+        18px;
+
+    border-radius:
+        9px;
+
+    background:
+        #101010;
+
+    border:
+        1px solid #202020;
+
+}
+
+.bed-card i {
+
+    font-size:
+        1.25rem;
+
+}
+
+.bed-card strong {
+
+    font-size:
+        0.95rem;
+
+}
+
+.bed-card span {
+
+    font-size:
+        0.72rem;
+
+    font-weight:
+        800;
+
+}
+
+.bed-card.free {
+
+    border-color:
+        rgba(0, 230, 118, 0.4);
+
+    color:
+        var(--green-primary);
+
+}
+
+.bed-card.occupied {
+
+    border-color:
+        rgba(255, 255, 255, 0.24);
+
+    color:
+        #fff;
+
+}
+
+.bed-card.offline {
+
+    color:
+        #777;
+
+    border-color:
+        #292929;
+
+}
+
+
+/* =========================================================
+   COMO FUNCIONA
+========================================================= */
+
+.smartbed__operation {
+
+    max-width:
+        1200px;
+
+    margin:
+        90px auto 0;
+
+}
+
+.smartbed__operation h3,
+
+.smartbed__evolution h3 {
+
+    text-align:
+        center;
+
+    color:
+        #fff;
+
+    font-size:
+        1.8rem;
+
+    margin-bottom:
+        40px;
+
+}
+
+.architecture {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        15px;
+
+    flex-wrap:
+        wrap;
+
+}
+
+.architecture__item {
+
+    width:
+        145px;
+
+    min-height:
+        130px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        13px;
+
+    background:
+        #101010;
+
+    border:
+        1px solid rgba(0, 230, 118, 0.18);
+
+    border-radius:
+        12px;
+
+    transition:
+        var(--transition);
+
+}
+
+.architecture__item:hover {
+
+    border-color:
+        var(--green-primary);
+
+    transform:
+        translateY(-6px);
+
+    box-shadow:
+        var(--shadow-green);
+
+}
+
+.architecture__item i {
+
+    color:
+        var(--green-primary);
+
+    font-size:
+        2rem;
+
+}
+
+.architecture__item span {
+
+    color:
+        #fff;
+
+    font-weight:
+        700;
+
+}
+
+.architecture__arrow {
+
+    color:
+        var(--green-primary);
+
+}
+
+
+/* =========================================================
+   NÚMEROS DO PROJETO
+========================================================= */
+
+.project-numbers {
+
+    max-width:
+        1200px;
+
+    margin:
+        90px auto 0;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap:
+        18px;
+
+}
+
+.project-number {
+
+    min-height:
+        160px;
+
+    background:
+        #0d0d0d;
+
+    border:
+        1px solid rgba(0, 230, 118, 0.15);
+
+    border-radius:
+        12px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    text-align:
+        center;
+
+    padding:
+        20px;
+
+}
+
+.project-number strong {
+
+    color:
+        var(--green-primary);
+
+    font-size:
+        2rem;
+
+    margin-bottom:
+        5px;
+
+}
+
+.project-number span {
+
+    color:
+        var(--text-secondary);
+
+    font-size:
+        0.87rem;
+
+}
+
+
+/* =========================================================
+   EVOLUÇÃO SMARTBED
+========================================================= */
+
+.smartbed__evolution {
+
+    max-width:
+        1200px;
+
+    margin:
+        90px auto 0;
+
+}
+
+.smartbed__evolution > p {
+
+    text-align:
+        center;
+
+    max-width:
+        700px;
+
+    color:
+        var(--text-secondary);
+
+    margin:
+        -20px auto 40px;
+
+}
+
+.evolution-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap:
+        20px;
+
+}
+
+.evolution-card {
+
+    position:
+        relative;
+
+    padding:
+        30px;
+
+    background:
+        #0f0f0f;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.06);
+
+    border-radius:
+        12px;
+
+    transition:
+        var(--transition);
+
+}
+
+.evolution-card:hover {
+
+    border-color:
+        var(--green-primary);
+
+    transform:
+        translateY(-6px);
+
+}
+
+.evolution-card > span {
+
+    display:
+        block;
+
+    font-size:
+        2rem;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-weight:
+        900;
+
+    color:
+        rgba(0, 230, 118, 0.3);
+
+    margin-bottom:
+        12px;
+
+}
+
+.evolution-card h4 {
+
+    color:
+        var(--green-primary);
+
+    margin-bottom:
+        10px;
+
+    font-size:
+        1.1rem;
+
+}
+
+.evolution-card p {
+
+    color:
+        var(--text-secondary);
+
+    font-size:
+        0.9rem;
+
+}
+
+
+/* =========================================================
+   SKILLS
+========================================================= */
+
+.skills {
+
+    background:
+        #090909;
+
+}
+
+.skills__grid {
+
+    max-width:
+        1100px;
+
+    margin:
+        0 auto;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap:
+        22px;
+
+}
+
+.skill-card {
+
+    text-align:
+        center;
+
+    padding:
+        35px 25px;
+
+    background:
+        #101010;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.06);
+
+    border-radius:
+        13px;
+
+    transition:
+        var(--transition);
+
+}
+
+.skill-card:hover {
+
+    transform:
+        translateY(-7px);
+
+    border-color:
+        var(--green-primary);
+
+    box-shadow:
+        var(--shadow-green);
+
+}
+
+.skill-card i {
+
+    width:
+        70px;
+
+    height:
+        70px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(0, 230, 118, 0.06);
+
+    border:
+        1px solid rgba(0, 230, 118, 0.15);
+
+    color:
+        var(--green-primary);
+
+    font-size:
+        1.8rem;
+
+    margin-bottom:
+        18px;
+
+}
+
+.skill-card h3 {
+
+    color:
+        #fff;
+
+    margin-bottom:
+        10px;
+
+}
+
+.skill-card p {
+
+    color:
+        var(--text-secondary);
+
+    font-size:
+        0.9rem;
+
+}
+
+
+/* =========================================================
+   OBJETIVO
+========================================================= */
+
+.objective {
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #001b0e,
+            #050505 60%
+        );
+
+    text-align:
+        center;
+
+}
+
+.objective__container {
+
+    max-width:
+        850px;
+
+    margin:
+        0 auto;
+
+}
+
+.objective__container > span {
+
+    color:
+        var(--green-primary);
+
+    font-size:
+        0.78rem;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        3px;
+
+}
+
+.objective__container h2 {
+
+    margin:
+        15px 0 25px;
+
+    font-size:
+        clamp(2.1rem, 4vw, 3.5rem);
+
+    color:
+        #fff;
+
+}
+
+.objective__container p {
+
+    color:
+        #c5c5c5;
+
+    margin-bottom:
+        17px;
+
+}
+
+.objective__container strong {
+
+    color:
+        var(--green-primary);
+
+}
+
+
+/* =========================================================
+   CONTATO
+========================================================= */
+
+.contact {
+
+    background:
+        #050505;
+
+}
+
+.contact__container {
+
+    max-width:
+        900px;
+
+    margin:
+        0 auto;
+
+    text-align:
+        center;
+
+    padding:
+        50px;
+
+    background:
+        #101010;
+
+    border:
+        1px solid var(--border-green);
+
+    border-radius:
+        15px;
+
+    box-shadow:
+        var(--shadow-green);
+
+}
+
+.contact__container h3 {
+
+    color:
+        #fff;
+
+    font-size:
+        1.6rem;
+
+    margin-bottom:
+        15px;
+
+}
+
+.contact__container p {
+
+    color:
+        var(--text-secondary);
+
+    max-width:
+        650px;
+
+    margin:
+        0 auto;
+
+}
+
+
+/* =========================================================
+   BOTÕES SOCIAIS
+========================================================= */
+
+.profile__social-wrapper {
+
+    margin-top:
+        30px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        15px;
+
+    flex-wrap:
+        wrap;
+
+}
+
+.social-btn {
+
+    min-width:
+        140px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        9px;
+
+    padding:
+        12px 22px;
+
+    border-radius:
+        7px;
+
+    font-size:
+        0.9rem;
+
+    font-weight:
+        700;
+
+    transition:
+        var(--transition);
+
+}
+
+.linkedin-btn {
+
+    background:
+        var(--green-primary);
+
+    color:
+        #000;
+
+}
+
+.linkedin-btn:hover {
+
+    background:
+        #00ff83;
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 0 20px rgba(0, 230, 118, 0.25);
+
+}
+
+.github-btn {
+
+    background:
+        transparent;
+
+    color:
+        #fff;
+
+    border:
+        1px solid #555;
+
+}
+
+.github-btn:hover {
+
+    border-color:
+        var(--green-primary);
+
+    color:
+        var(--green-primary);
+
+    transform:
+        translateY(-4px);
+
+}
+
+.whatsapp-btn {
+
+    background:
+        transparent;
+
+    color:
+        var(--green-primary);
+
+    border:
+        1px solid var(--green-primary);
+
+}
+
+.whatsapp-btn:hover {
+
+    background:
+        rgba(0, 230, 118, 0.09);
+
+    transform:
+        translateY(-4px);
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+
+    min-height:
+        180px;
+
+    padding:
+        40px 7%;
+
+    background:
+        #000;
+
+    border-top:
+        1px solid rgba(0, 230, 118, 0.25);
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        12px;
+
+    text-align:
+        center;
+
+}
+
+.footer__logo {
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-weight:
+        900;
+
+    font-size:
+        1.5rem;
+
+    color:
+        var(--green-primary);
+
+}
+
+.footer p {
+
+    color:
+        #888;
+
+    font-size:
+        0.9rem;
+
+}
+
+.footer p strong {
+
+    color:
+        #ccc;
+
+}
+
+.footer__copy {
+
+    font-size:
+        0.8rem !important;
+
+}
+
+.footer__social {
+
+    display:
+        flex;
+
+    gap:
+        20px;
+
+    margin-top:
+        8px;
+
+}
+
+.footer__social a {
+
+    width:
+        38px;
+
+    height:
+        38px;
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    border-radius:
+        50%;
+
+    border:
+        1px solid #222;
+
+    color:
+        #888;
+
+    transition:
+        var(--transition);
+
+}
+
+.footer__social a:hover {
+
+    color:
+        var(--green-primary);
+
+    border-color:
+        var(--green-primary);
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 0 15px rgba(0, 230, 118, 0.15);
+
+}
+
+
+/* =========================================================
+   ANIMAÇÃO GERAL
+========================================================= */
+
+@keyframes fadeUp {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(25px);
+
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+.profile__container,
+.especialidades__card,
+.timeline__content,
+.smartbed__hero,
+.skill-card {
+
+    animation:
+        fadeUp 0.8s ease both;
+
+}
+
+
+/* =========================================================
+   RESPONSIVO - TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .navbar {
+
+        padding:
+            0 5%;
+
+    }
+
+    .navbar__menu {
+
+        gap:
+            15px;
+
+    }
+
+    .profile__container {
+
+        grid-template-columns:
+            1fr;
+
+        text-align:
+            center;
+
+    }
+
+    .profile__copy {
+
+        text-align:
+            left;
+
+    }
+
+    .smartbed__hero {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .especialidades__grid {
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+    .skills__grid {
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+    .project-numbers {
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+    .evolution-grid {
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVO - CELULAR
+========================================================= */
+
+@media (max-width: 768px) {
+
+    section {
+
+        padding:
+            80px 22px;
+
+    }
+
+
+    /* NAVBAR */
+
+    .navbar {
+
+        min-height:
+            70px;
+
+        justify-content:
+            center;
+
+    }
+
+    .navbar__menu {
+
+        display:
+            none;
+
+    }
+
+
+    /* HEADER */
+
+    .header {
+
+        min-height:
+            100vh;
+
+        padding:
+            100px 20px 70px;
+
+    }
+
+    .header__subtitle {
+
+        font-size:
+            0.72rem;
+
+        letter-spacing:
+            2px;
+
+    }
+
+    .header__buttons {
+
+        flex-direction:
+            column;
+
+        align-items:
+            center;
+
+    }
+
+    .btn {
+
+        width:
+            100%;
+
+        max-width:
+            280px;
+
+    }
+
+
+    /* PERFIL */
+
+    .profile__container {
+
+        padding:
+            35px 22px;
+
+        gap:
+            30px;
+
+    }
+
+    .profile__avatar {
+
+        width:
+            160px;
+
+        height:
+            160px;
+
+    }
+
+    .profile__copy {
+
+        font-size:
+            0.94rem;
+
+        text-align:
+            left;
+
+    }
+
+
+    /* TÍTULO SEÇÃO */
+
+    .section-header {
+
+        justify-content:
+            flex-start;
+
+        align-items:
+            baseline;
+
+    }
+
+
+    /* TIMELINE */
+
+    .timeline::before {
+
+        left:
+            25px;
+
+    }
+
+    .timeline__item {
+
+        gap:
+            18px;
+
+    }
+
+    .timeline__icon {
+
+        min-width:
+            52px;
+
+        width:
+            52px;
+
+        height:
+            52px;
+
+        font-size:
+            1rem;
+
+    }
+
+    .timeline__content {
+
+        padding:
+            20px;
+
+    }
+
+
+    /* ESPECIALIDADES */
+
+    .especialidades__grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .especialidades__card {
+
+        padding:
+            30px 25px;
+
+    }
+
+
+    /* SMARTBED */
+
+    .smartbed__hero {
+
+        gap:
+            40px;
+
+    }
+
+    .smartbed__info h2 {
+
+        font-size:
+            3.2rem;
+
+    }
+
+    .architecture {
+
+        flex-direction:
+            column;
+
+    }
+
+    .architecture__arrow {
+
+        transform:
+            rotate(90deg);
+
+    }
+
+    .architecture__item {
+
+        width:
+            100%;
+
+        max-width:
+            280px;
+
+    }
+
+
+    /* NÚMEROS */
+
+    .project-numbers {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    /* EVOLUÇÃO */
+
+    .evolution-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    /* SKILLS */
+
+    .skills__grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    /* CONTATO */
+
+    .contact__container {
+
+        padding:
+            35px 20px;
+
+    }
+
+    .profile__social-wrapper {
+
+        flex-direction:
+            column;
+
+    }
+
+    .social-btn {
+
+        width:
+            100%;
+
+        max-width:
+            280px;
+
+    }
+
+
+    /* DASHBOARD */
+
+    .dashboard-preview__content {
+
+        padding:
+            18px;
+
+    }
+
+    .bed-card {
+
+        grid-template-columns:
+            30px 1fr;
+
+    }
+
+    .bed-card span {
+
+        grid-column:
+            2;
+
+    }
+
+}
+
+
+/* =========================================================
+   CELULARES PEQUENOS
+========================================================= */
+
+@media (max-width: 420px) {
+
+    .header__title {
+
+        font-size:
+            2.4rem;
+
+    }
+
+    .header__role {
+
+        font-size:
+            1.1rem;
+
+    }
+
+    .section-title {
+
+        font-size:
+            1.8rem;
+
+    }
+
+    .profile__container {
+
+        padding:
+            28px 18px;
+
+    }
+
+    .smartbed__info h2 {
+
+        font-size:
+            2.8rem;
+
+    }
+
+}
+
+/* =========================================================
+   ANIMAÇÃO AO ENTRAR NA TELA
+========================================================= */
+
+.hidden {
+    opacity: 0;
+    transform: translateY(25px);
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
